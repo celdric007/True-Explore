@@ -1,38 +1,156 @@
-html {
-  font-size: 14px;
+:root{
+    --sky:#2fa4e7;
+    --black:#0e0e0e;
+    --white:#ffffff;
+    --soft:#f5f8fb;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+body{
+    font-family:'Poppins', sans-serif;
+    background:var(--white);
+    color:#222;
+    scroll-behavior:smooth;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+/* NAVBAR */
+.navbar{
+    background:var(--black);
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+/* HERO */
+.hero{
+    min-height:100vh;
+    background:
+      linear-gradient(rgba(0,0,0,.75), rgba(47,164,231,.6)),
+      url('/images/chess.jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:white;
+    text-align:center;
 }
 
-body {
-  margin-bottom: 60px;
+.hero-box{
+    background:rgba(0,0,0,.55);
+    padding:40px 25px;
+    border-radius:18px;
+    border-left:6px solid var(--sky);
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+.hero h1{
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:15px;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.hero h5{
+    letter-spacing:1.5px;
+    font-weight:400;
+    margin-bottom:20px;
 }
 
-.header-horizontal{
-    height: 80px !important;
+/* Responsive hero fonts */
+@media (max-width: 767px){
+    .hero h1{font-size:2.2rem;}
+    .hero h5{font-size:1rem;}
+    .hero p{font-size:.95rem;}
 }
-/* .hide{
-  display: none;
-} */
+
+/* SECTION */
+.section{
+    padding:80px 15px;
+}
+
+.section-title{
+    text-align:center;
+    font-weight:600;
+    letter-spacing:1.5px;
+    margin-bottom:50px;
+}
+
+/* FADE EFFECT */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+.fade.show{
+    opacity:1;
+    transform:none;
+}
+
+/* PROJECT CARD */
+.project-card{
+    background:white;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
+    overflow:hidden;
+    transition:.35s;
+}
+.project-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 55px rgba(0,0,0,.15);
+}
+.project-body{
+    padding:20px;
+}
+.project-tag{
+    display:inline-block;
+    background:var(--sky);
+    color:white;
+    padding:5px 14px;
+    border-radius:30px;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+/* SKILLS CARDS */
+.skill-card{
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    transition:.3s;
+    text-align:center;
+    padding:20px;
+}
+.skill-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+/* FLOATING BUTTONS */
+.float-btn{
+    position:fixed;
+    right:25px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:white;
+    z-index:999;
+}
+.whatsapp{bottom:25px;background:#25d366;}
+.instagram{
+    bottom:90px;
+    background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+/* FOOTER */
+footer{
+    background:var(--black);
+    color:#bbb;
+}
+footer h6{
+    color:white;
+    letter-spacing:1px;
+}
+footer a{
+    color:#bbb;
+    text-decoration:none;
+}
+footer a:hover{
+    color:white;
+}
